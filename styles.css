@@ -1,0 +1,194 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #020c1b;
+  color: #e6edf3;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+}
+
+p {
+  line-height: 1.6;
+  color: #b0c4d4;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(2, 12, 27, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #e6edf3;
+  margin-left: 25px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #3fb950;
+}
+
+/* =========================
+   PROMO BANNER
+========================= */
+.banner {
+  background: linear-gradient(90deg, #0a192f, #0f2a44);
+  border-bottom: 1px solid rgba(63,185,80,0.3);
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.banner p {
+  margin-bottom: 10px;
+  color: #e6edf3;
+  font-weight: 500;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+  background: radial-gradient(circle at top, #0f2a44 0%, #020c1b 70%);
+}
+
+.hero h2 {
+  font-size: 36px;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* =========================
+   CTA BUTTONS
+========================= */
+.cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3fb950, #2ea043);
+  color: #fff;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(63,185,80,0.3);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FORM STYLING
+========================= */
+form {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #020c1b;
+  color: #e6edf3;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3fb950;
+}
+
+button {
+  padding: 12px 20px;
+  background: #3fb950;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2ea043;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 40px;
+  color: #7f9bb3;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+}
