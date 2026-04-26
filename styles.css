@@ -205,6 +205,18 @@ nav a.active::after {
   transform: scaleX(1);
 }
 
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo span {
+  font-weight: 600;
+}
+
 /* =========================
    PROMO BANNER
 ========================= */
