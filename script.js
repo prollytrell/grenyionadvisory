@@ -29,7 +29,7 @@
   <div class="cards">
 
     <div class="card">
-      <div class="icon"></div>
+      <div class="icon">🔍</div>
       <h4>Nonprofit Security Basics Review</h4>
       <p>Get a clear snapshot of your organization’s key risks and immediate next steps.</p>
       <ul>
@@ -52,7 +52,7 @@
 
     <div class="card popular">
       <span class="badge">Most Popular</span>
-      <div class="icon"></div>
+      <div class="icon">📊</div>
       <h4>Starter Security Assessment</h4>
       <p>A structured review with deeper risk analysis and formal documentation.</p>
       <ul>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="card">
-      <div class="icon"></div>
+      <div class="icon">🛡️</div>
       <h4>Extended Risk & Policy Package</h4>
       <p>Build a stronger foundation with structured risk tracking and policies.</p>
       <ul>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="card">
-      <div class="icon"></div>
+      <div class="icon">🔄</div>
       <h4>Ongoing Security Support</h4>
       <p>Maintain and improve your security posture with ongoing guidance.</p>
       <ul>
@@ -101,7 +101,7 @@
       <thead>
         <tr>
           <th>Feature</th>
-          <th>Free Review</th>
+          <th>Free</th>
           <th>Starter</th>
           <th>Extended</th>
           <th>Ongoing</th>
@@ -112,21 +112,14 @@
           <td>Risk Identification</td>
           <td>Basic</td>
           <td>Expanded</td>
-          <td>Full Register</td>
-          <td>Ongoing Updates</td>
-        </tr>
-        <tr>
-          <td>Recommendations</td>
-          <td>Prioritized</td>
-          <td>Detailed</td>
-          <td>Structured</td>
+          <td>Full</td>
           <td>Continuous</td>
         </tr>
         <tr>
           <td>Policies</td>
           <td>Starter</td>
           <td>Basic</td>
-          <td>Expanded</td>
+          <td>Advanced</td>
           <td>Maintained</td>
         </tr>
         <tr>
@@ -139,32 +132,6 @@
       </tbody>
     </table>
   </div>
-</section>
-
-<section>
-  <h3>Future Expansion</h3>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon"></div>
-      <h4>MSP & Small Business Support</h4>
-      <p>Security and GRC support designed to complement IT providers and growing businesses.</p>
-      <ul>
-        <li>Risk assessments</li>
-        <li>Documentation</li>
-        <li>Policy support</li>
-        <li>Compliance readiness</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <p>
-    Services are designed to be practical, non-technical, and aligned to the needs of small organizations and nonprofits.
-  </p>
 </section>
 
 <footer>
