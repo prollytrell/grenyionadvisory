@@ -1,42 +1,31 @@
 /* =========================
-   GRENYION ADVISORY — HYBRID (DARK HERO + LIGHT SECTIONS)
+   GRENYION — CLEAN PROFESSIONAL LAYOUT FIX
 ========================= */
 
 :root {
   --bg: #020b1f;
   --bg-deep: #010714;
   --navy: #061a36;
-  --navy-soft: #0b2748;
 
-  --panel-dark: rgba(9, 28, 55, 0.85);
-  --panel-dark-2: rgba(13, 42, 76, 0.9);
-
-  /* LIGHT MODE SECTIONS */
-  --section-light: #f7fafc;
-  --section-light-2: #ffffff;
+  --section-light: #f8fafc;
+  --section-white: #ffffff;
 
   --text-dark: #0f172a;
   --muted-dark: #475569;
 
-  --line: rgba(255, 255, 255, 0.10);
   --line-light: rgba(0,0,0,0.06);
 
   --green: #5cbe4f;
-  --green-dark: #2f8c3f;
-  --blue: #2b65f6;
-  --white: #ffffff;
 
-  --radius: 18px;
-  --max: 1160px;
+  --max: 1100px;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Inter, "Segoe UI", sans-serif;
   background: linear-gradient(180deg, var(--bg), var(--bg-deep));
-  color: white;
 }
 
 /* =========================
@@ -50,27 +39,30 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: rgba(1, 7, 20, 0.9);
+  background: rgba(1, 7, 20, 0.95);
 }
 
 nav a {
   margin-left: 20px;
   color: #cbd5f5;
+  text-decoration: none;
 }
 
 nav a:hover { color: white; }
 
 /* =========================
-   HERO (DARK)
+   HERO (FULL WIDTH DARK)
 ========================= */
 .hero {
   text-align: center;
   padding: 120px 20px 80px;
   background: radial-gradient(circle at center, #0b2748 0%, #020b1f 80%);
+  color: white;
 }
 
 .hero h2 {
   font-size: 42px;
+  margin-bottom: 10px;
 }
 
 .hero p {
@@ -78,25 +70,32 @@ nav a:hover { color: white; }
 }
 
 /* =========================
-   LIGHT SECTIONS
+   SECTION WRAPPER (FIXES BOX ISSUE)
 ========================= */
-section {
+.section {
+  width: 100%;
+  padding: 80px 20px;
+}
+
+.section.light {
+  background: var(--section-light);
+}
+
+.section.white {
+  background: var(--section-white);
+}
+
+.container {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 80px 20px;
-  background: var(--section-light);
+}
+
+.section h3 {
   color: var(--text-dark);
+  margin-bottom: 20px;
 }
 
-section:nth-of-type(even) {
-  background: var(--section-light-2);
-}
-
-section h3 {
-  color: var(--text-dark);
-}
-
-section p {
+.section p {
   color: var(--muted-dark);
 }
 
@@ -107,7 +106,6 @@ section p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-top: 30px;
 }
 
 .card {
@@ -119,11 +117,12 @@ section p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -163,10 +162,13 @@ section p {
 /* =========================
    TABLE
 ========================= */
+.table-wrapper {
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -191,6 +193,7 @@ th {
   padding: 10px 18px;
   border-radius: 999px;
   display: inline-block;
+  text-decoration: none;
 }
 
 /* =========================
