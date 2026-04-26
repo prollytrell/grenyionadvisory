@@ -1,143 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services - Grenyion Advisory</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+/* =========================
+   IMPROVED LAYOUT FIXES
+========================= */
 
-<header>
-  <h1>Grenyion Advisory</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+/* Center main content better */
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
 
-<section class="hero">
-  <h2>Simple, Practical Security Services</h2>
-  <p>Structured offerings designed to help you understand risk, take action, and build a stronger foundation over time.</p>
-</section>
+/* Fix cards alignment */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
 
-<section>
-  <h3>Start Here</h3>
+/* Improve card proportions */
+.card {
+  padding: 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(10, 30, 60, 0.9), rgba(5, 15, 30, 0.9));
+  border: 1px solid rgba(255,255,255,0.08);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  <div class="cards">
+/* Fix icon styling (clean, not emoji-heavy look) */
+.icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(63,185,80,0.15);
+  margin-bottom: 10px;
+}
 
-    <div class="card">
-      <div class="icon">🔍</div>
-      <h4>Nonprofit Security Basics Review</h4>
-      <p>Get a clear snapshot of your organization’s key risks and immediate next steps.</p>
-      <ul>
-        <li>Risk overview</li>
-        <li>Plain-language explanations</li>
-        <li>Prioritized actions</li>
-        <li>Starter policies</li>
-      </ul>
-      <p><strong>Free (Limited Availability)</strong></p>
-      <a href="contact.html" class="cta">Request Free Review</a>
-    </div>
+/* Fix badge */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #3fb950;
+  color: #000;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
 
-  </div>
-</section>
+.card.popular {
+  border: 1px solid rgba(63,185,80,0.4);
+  transform: scale(1.02);
+}
 
-<section>
-  <h3>Core Services</h3>
+/* Fix spacing inside cards */
+.card ul {
+  margin: 10px 0;
+  padding-left: 18px;
+}
 
-  <div class="cards">
+/* Fix comparison table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(10,30,60,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-    <div class="card popular">
-      <span class="badge">Most Popular</span>
-      <div class="icon">📊</div>
-      <h4>Starter Security Assessment</h4>
-      <p>A structured review with deeper risk analysis and formal documentation.</p>
-      <ul>
-        <li>5–10 identified risks</li>
-        <li>Impact analysis</li>
-        <li>Actionable roadmap</li>
-        <li>Formal report</li>
-      </ul>
-      <p><strong>$150–$300</strong></p>
-    </div>
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-    <div class="card">
-      <div class="icon">🛡️</div>
-      <h4>Extended Risk & Policy Package</h4>
-      <p>Build a stronger foundation with structured risk tracking and policies.</p>
-      <ul>
-        <li>Full risk register</li>
-        <li>Policy development</li>
-        <li>Customization</li>
-        <li>Implementation guidance</li>
-      </ul>
-      <p><strong>$300–$600</strong></p>
-    </div>
+th {
+  background: rgba(63,185,80,0.15);
+  font-weight: 600;
+}
 
-    <div class="card">
-      <div class="icon">🔄</div>
-      <h4>Ongoing Security Support</h4>
-      <p>Maintain and improve your security posture with ongoing guidance.</p>
-      <ul>
-        <li>Periodic reviews</li>
-        <li>Policy updates</li>
-        <li>Q&A support</li>
-        <li>Check-in calls</li>
-      </ul>
-      <p><strong>$100–$300/month</strong></p>
-    </div>
+tr:hover {
+  background: rgba(255,255,255,0.03);
+}
 
-  </div>
-</section>
+/* Fix section headers alignment */
+h3 {
+  margin-bottom: 10px;
+}
 
-<section>
-  <h3>Compare Services</h3>
+/* Improve overall vertical rhythm */
+section + section {
+  margin-top: 20px;
+}
 
-  <div class="comparison">
-    <table>
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Free</th>
-          <th>Starter</th>
-          <th>Extended</th>
-          <th>Ongoing</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Risk Identification</td>
-          <td>Basic</td>
-          <td>Expanded</td>
-          <td>Full</td>
-          <td>Continuous</td>
-        </tr>
-        <tr>
-          <td>Policies</td>
-          <td>Starter</td>
-          <td>Basic</td>
-          <td>Advanced</td>
-          <td>Maintained</td>
-        </tr>
-        <tr>
-          <td>Support</td>
-          <td>One Call</td>
-          <td>Limited</td>
-          <td>Guided</td>
-          <td>Ongoing</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 
-<footer>
-  <p>© 2026 Grenyion Advisory</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+  .card.popular {
+    transform: none;
+  }
+}
