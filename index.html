@@ -6,6 +6,118 @@
   <title>Grenyion Advisory - Free Security Review</title>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .roadmap {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 110px 1fr;
+      gap: 26px 18px;
+      align-items: center;
+      margin: 38px 0 34px;
+    }
+
+    .roadmap-step {
+      position: relative;
+      min-height: 235px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .roadmap-step:hover {
+      transform: translateY(-6px);
+      border-color: rgba(92, 190, 79, 0.45);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .lower-step {
+      margin-top: 28px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(245, 248, 252, 0.55);
+    }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background: rgba(92, 190, 79, 0.12);
+      border: 1px solid rgba(92, 190, 79, 0.32);
+      color: #5cbe4f;
+    }
+
+    .step-icon svg {
+      width: 23px;
+      height: 23px;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .roadmap-step h4 {
+      margin-bottom: 10px;
+    }
+
+    .roadmap-step p {
+      margin-bottom: 0;
+    }
+
+    .roadmap-arrow {
+      color: rgba(92, 190, 79, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.9;
+    }
+
+    .roadmap-arrow svg {
+      width: 100%;
+      max-width: 130px;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 8px rgba(92, 190, 79, 0.25));
+    }
+
+    .arrow-two {
+      grid-column: 2;
+      grid-row: 2;
+      transform: translateY(-10px);
+    }
+
+    .roadmap-cta {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 850px) {
+      .roadmap {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .roadmap-arrow {
+        display: none;
+      }
+
+      .lower-step {
+        margin-top: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -59,14 +171,81 @@
 <!-- WHAT TO EXPECT -->
 <section>
   <h3>What to Expect</h3>
-  <ul>
-    <li>Fill out a short questionnaire</li>
-    <li>Receive a structured security & AI risk review</li>
-    <li>Optional call to walk through findings</li>
-    <li>Clear next steps to improve your security</li>
-  </ul>
 
-  <a class="cta" href="#form">Get Your Free Security Review</a>
+  <div class="roadmap">
+    <div class="roadmap-step">
+      <span class="step-number">01</span>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </div>
+      <h4>Questionnaire</h4>
+      <p>Answer a short intake form about your organization, tools, security basics, and AI usage.</p>
+    </div>
+
+    <div class="roadmap-arrow arrow-one">
+      <svg viewBox="0 0 160 80" fill="none" stroke="currentColor">
+        <path d="M10 50 C55 10, 105 10, 145 45"/>
+        <path d="M132 42 L145 45 L137 57"/>
+      </svg>
+    </div>
+
+    <div class="roadmap-step">
+      <span class="step-number">02</span>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6z"/>
+          <path d="M9 12l2 2 4-5"/>
+        </svg>
+      </div>
+      <h4>Review</h4>
+      <p>Receive a structured Security & AI Risk Review with your top risks and prioritized recommendations.</p>
+    </div>
+
+    <div class="roadmap-arrow arrow-two">
+      <svg viewBox="0 0 160 120" fill="none" stroke="currentColor">
+        <path d="M145 20 C90 95, 65 95, 15 55"/>
+        <path d="M25 54 L15 55 L20 66"/>
+      </svg>
+    </div>
+
+    <div class="roadmap-step lower-step">
+      <span class="step-number">03</span>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+          <path d="M8 9h8"/>
+          <path d="M8 13h5"/>
+        </svg>
+      </div>
+      <h4>Optional Consult</h4>
+      <p>Jump on a walkthrough call to refine findings, clarify priorities, and discuss your next move.</p>
+    </div>
+
+    <div class="roadmap-arrow arrow-three">
+      <svg viewBox="0 0 160 80" fill="none" stroke="currentColor">
+        <path d="M10 35 C55 75, 110 75, 145 35"/>
+        <path d="M132 29 L145 35 L134 44"/>
+      </svg>
+    </div>
+
+    <div class="roadmap-step lower-step">
+      <span class="step-number">04</span>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 17l6-6 4 4 8-8"/>
+          <path d="M14 7h7v7"/>
+          <path d="M5 21h14"/>
+        </svg>
+      </div>
+      <h4>Next Steps</h4>
+      <p>Leave with practical improvements, policy direction, and a clear path toward stronger security governance.</p>
+    </div>
+  </div>
+
+  <a class="cta roadmap-cta" href="#form">Get Your Free Security Review</a>
 </section>
 
 <!-- FORM -->
