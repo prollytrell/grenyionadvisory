@@ -170,10 +170,58 @@
 }
 
   /* Fix mobile horizontal overflow */
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SPECIFIC FIX: roadmap grid causing overflow */
+@media (max-width: 768px) {
+  .roadmap {
+    display: grid;
+    grid-template-columns: 1fr; /* force single column */
+    gap: 16px;
+    width: 100%;
   }
+
+  .roadmap-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .roadmap-arrow {
+    display: none;
+  }
+
+  /* ensure parent containers don’t squeeze layout */
+  .container, .section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+  .roadmap-arrow {
+    display: none; /* remove arrows on mobile */
+  }
+
+  .container, .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 
   * {
     box-sizing: border-box;
