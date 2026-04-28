@@ -10,8 +10,9 @@
     .roadmap {
       position: relative;
       display: grid;
-      grid-template-columns: 1fr 110px 1fr;
-      gap: 26px 18px;
+      grid-template-columns: 1fr 120px 1fr;
+      grid-template-rows: auto auto;
+      gap: 40px 20px;
       align-items: center;
       margin: 38px 0 34px;
     }
@@ -93,10 +94,20 @@
       filter: drop-shadow(0 0 8px rgba(92, 190, 79, 0.25));
     }
 
+    .arrow-one {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
     .arrow-two {
       grid-column: 2;
       grid-row: 2;
-      transform: translateY(-10px);
+    }
+
+    .arrow-three {
+      grid-column: 3;
+      grid-row: 2;
+      transform: translateX(-60px);
     }
 
     .roadmap-cta {
@@ -173,7 +184,7 @@
   <h3>What to Expect</h3>
 
   <div class="roadmap">
-    <div class="roadmap-step">
+    <div class="roadmap-step" style="grid-column:1; grid-row:1;">
       <span class="step-number">01</span>
       <div class="step-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -193,6 +204,7 @@
     </div>
 
     <div class="roadmap-step">
+      <div class="roadmap-step" style="grid-column:3; grid-row:1;">
       <span class="step-number">02</span>
       <div class="step-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -212,6 +224,7 @@
     </div>
 
     <div class="roadmap-step lower-step">
+      <div class="roadmap-step lower-step" style="grid-column:1; grid-row:2;">
       <span class="step-number">03</span>
       <div class="step-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -232,6 +245,7 @@
     </div>
 
     <div class="roadmap-step lower-step">
+      <div class="roadmap-step lower-step" style="grid-column:3; grid-row:2;">
       <span class="step-number">04</span>
       <div class="step-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
