@@ -77,14 +77,7 @@
       margin-bottom: 0;
     }
 
-    .roadmap-arrow {
-      color: rgba(92, 190, 79, 0.72);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.9;
-    }
-
+    
     .roadmap-arrow svg {
       width: 100%;
       max-width: 130px;
@@ -94,24 +87,13 @@
       filter: drop-shadow(0 0 8px rgba(92, 190, 79, 0.25));
     }
 
-    .arrow-one {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .arrow-two {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .arrow-three {
-      grid-column: 3;
-      grid-row: 2;
-      transform: translateX(-60px);
-    }
-
+    
+    
+    
     .roadmap-cta {
-      margin-top: 10px;
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
     }
 
     @media (max-width: 850px) {
@@ -128,7 +110,55 @@
         margin-top: 0;
       }
     }
-  </style>
+  .who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.who-card {
+  padding: 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.check-item {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+}
+
+.check-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-left: 2px solid #5cbe4f;
+  border-bottom: 2px solid #5cbe4f;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .who-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -157,26 +187,72 @@
 <!-- WHAT YOU GET -->
 <section>
   <h3>What You Get</h3>
-  <ul>
-    <li>Identification of your top 3–5 security risks</li>
-    <li>Clear explanation of each risk in plain language</li>
-    <li>Prioritized recommendations</li>
-    <li>AI usage risk review (ChatGPT, copilots, etc.)</li>
-    <li>Guidance on safe AI usage</li>
-    <li>Policy starter pack (Password, Acceptable Use, Incident Response, AI Use)</li>
-    <li>Optional walkthrough call</li>
-  </ul>
+
+  <div class="benefits-grid">
+
+    <div>
+      <p class="check-item">Identification of your top 3–5 security risks</p>
+      <p class="check-item">Clear explanation of each risk in plain language</p>
+      <p class="check-item">Prioritized recommendations</p>
+      <p class="check-item">AI usage risk review (ChatGPT, copilots, etc.)</p>
+    </div>
+
+    <div>
+      <p class="check-item">Guidance on safe AI usage</p>
+      <p class="check-item">Policy starter pack (Password, Acceptable Use, Incident Response, AI Use)</p>
+      <p class="check-item">Optional walkthrough call</p>
+    </div>
+
+  </div>
+
 </section>
 
 <!-- WHO IT'S FOR -->
 <section>
   <h3>Who This Is For</h3>
-  <ul>
-    <li>Nonprofits handling donor or community data</li>
-    <li>Startups moving fast without dedicated security</li>
-    <li>Organizations using AI tools without clear guidelines</li>
-    <li>Teams looking for clarity without technical overwhelm</li>
-  </ul>
+
+  <div class="who-grid">
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c2-4 14-4 16 0"/>
+        </svg>
+      </div>
+      <p>Nonprofits handling donor or community data</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 12h18"/>
+          <path d="M12 3v18"/>
+        </svg>
+      </div>
+      <p>Startups moving fast without dedicated security</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6z"/>
+        </svg>
+      </div>
+      <p>Organizations using AI tools without clear guidelines</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        </svg>
+      </div>
+      <p>Teams looking for clarity without technical overwhelm</p>
+    </div>
+
+  </div>
+
 </section>
 
 <!-- WHAT TO EXPECT -->
@@ -199,12 +275,7 @@
   </div>
 
   <!-- arrow 1 -->
-  <div class="roadmap-arrow arrow-one">
-    <svg viewBox="0 0 120 40" fill="none" stroke="currentColor">
-      <line x1="10" y1="20" x2="100" y2="20" />
-      <polyline points="90,10 110,20 90,30" />
-    </svg>
-  </div>
+  
 
   <!-- 2 -->
   <div class="roadmap-step" style="grid-column:3; grid-row:1;">
@@ -220,12 +291,7 @@
   </div>
 
   <!-- arrow 2 (down) -->
-  <div class="roadmap-arrow arrow-two">
-    <svg viewBox="0 0 40 120" fill="none" stroke="currentColor">
-      <line x1="20" y1="10" x2="20" y2="100" />
-      <polyline points="10,90 20,110 30,90" />
-    </svg>
-  </div>
+  
 
   <!-- 3 -->
   <div class="roadmap-step lower-step" style="grid-column:1; grid-row:2;">
@@ -242,12 +308,7 @@
   </div>
 
   <!-- arrow 3 -->
-  <div class="roadmap-arrow arrow-three">
-    <svg viewBox="0 0 120 40" fill="none" stroke="currentColor">
-      <line x1="10" y1="20" x2="100" y2="20" />
-      <polyline points="90,10 110,20 90,30" />
-    </svg>
-  </div>
+  
 
   <!-- 4 -->
   <div class="roadmap-step lower-step" style="grid-column:3; grid-row:2;">
