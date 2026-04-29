@@ -656,4 +656,15 @@ footer p {
     scroll-behavior: auto !important;
     transition: none !important;
   }
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 620px;
+}
 }
