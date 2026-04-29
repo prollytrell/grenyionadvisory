@@ -457,15 +457,11 @@ th, td {
   padding: 14px;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  width: 100%;
-  table-layout: fixed;
 }
 
 th {
   background: rgba(92,190,79,0.12);
   font-weight: 600;
-  word-break: break-word;
-  white-space: normal;
 }
 
 tr:hover {
@@ -660,57 +656,4 @@ footer p {
     scroll-behavior: auto !important;
     transition: none !important;
   }
-
-/* ===== HARD FIX FOR YOUR ACTUAL ISSUES ===== */
-
-@media (max-width: 768px) {
-
-  /* 1. FIX ROADMAP (THIS IS THE BIG ONE) */
-  .roadmap {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px;
-  }
-
-  .roadmap-step {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* Kill inline grid positioning */
-  .roadmap-step[style] {
-    all: unset;
-    display: block;
-    width: 100%;
-    padding: 20px;
-    border-radius: 14px;
-    background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  /* 2. FIX SERVICES TABLE */
-  table {
-    display: block !important;
-    overflow-x: auto !important;
-    width: 100% !important;
-  }
-
-  /* 3. PREVENT ANY ELEMENT FROM BREAKING WIDTH */
-  * {
-    max-width: 100%;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-.table-scroll {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.table-scroll table {
-  min-width: 620px;
-}
 }
