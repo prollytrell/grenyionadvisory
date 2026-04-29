@@ -457,11 +457,15 @@ th, td {
   padding: 14px;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  width: 100%;
+  table-layout: fixed;
 }
 
 th {
   background: rgba(92,190,79,0.12);
   font-weight: 600;
+  word-break: break-word;
+  white-space: normal;
 }
 
 tr:hover {
