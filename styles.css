@@ -1,997 +1,274 @@
 /* =========================
-   GRENYION ADVISORY — MODERN CYBER CONSULTING THEME
-   Inspired by polished cybersecurity consulting layouts:
-   bold hero sections, sticky navigation, card grids, subtle motion,
-   clear CTAs, and trust-building content blocks.
+   GRENYION ADVISORY — CLEAN FIXED STYLES
 ========================= */
 
 :root {
   --bg: #020b1f;
   --bg-deep: #010714;
   --navy: #061a36;
-  --navy-soft: #0b2748;
-  --panel: rgba(9, 28, 55, 0.72);
-  --panel-light: rgba(13, 42, 76, 0.9);
-  --line: rgba(255, 255, 255, 0.10);
-  --line-green: rgba(92, 190, 79, 0.42);
+  --panel: rgba(9, 28, 55, 0.75);
+  --line: rgba(255,255,255,0.08);
   --text: #f5f8fc;
   --muted: #b8c7d9;
-  --muted-2: #8193aa;
   --green: #5cbe4f;
   --green-dark: #2f8c3f;
   --blue: #2b65f6;
-  --white: #ffffff;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-  --radius: 18px;
-  --max: 1160px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background:
-    radial-gradient(circle at 15% 5%, rgba(43, 101, 246, 0.18), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(92, 190, 79, 0.13), transparent 26%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.22;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, black, transparent 82%);
-  z-index: -1;
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
-  color: var(--text);
-  line-height: 1.08;
-}
-
-h1, h2 {
-  letter-spacing: -0.04em;
-}
-
-h2 {
-  font-size: clamp(2.4rem, 6vw, 5.8rem);
-  max-width: 980px;
-}
-
-h3 {
-  font-size: clamp(1.7rem, 3vw, 2.8rem);
-  margin-bottom: 18px;
-}
-
-h4 {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
-
-p {
-  color: var(--muted);
-  line-height: 1.72;
-  font-size: 1rem;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  padding-left: 1.15rem;
-  color: var(--muted);
-}
-
-li {
-  margin-bottom: 10px;
-  line-height: 1.55;
-}
-
-strong {
-  color: var(--white);
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 42px 0;
+  --max: 1100px;
 }
 
 /* =========================
-   HEADER / NAV
+   GLOBAL RESET
 ========================= */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 22px;
-  padding: 18px max(22px, calc((100vw - var(--max)) / 2));
-  background: rgba(1, 7, 20, 0.74);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
-  transition: padding 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
-}
-
-header.scrolled {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background: rgba(1, 7, 20, 0.94);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-}
-
-header h1 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-header h1::before {
-  content: "G";
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, rgba(43, 101, 246, 0.32), rgba(92, 190, 79, 0.26));
-  border: 1px solid var(--line-green);
-  color: var(--white);
-  font-weight: 800;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  position: relative;
-  padding: 10px 13px;
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 7px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--green), var(--blue));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-1px);
-}
-
-nav a:hover::after,
-nav a.active::after {
-  transform: scaleX(1);
-}
-
-/* =========================
-   PROMO BANNER
-========================= */
-.banner {
-  max-width: none;
-  margin: 0;
-  padding: 14px 22px;
-  text-align: center;
-  border-bottom: 1px solid var(--line-green);
-  background:
-    linear-gradient(90deg, rgba(92, 190, 79, 0.18), rgba(43, 101, 246, 0.16)),
-    rgba(5, 18, 38, 0.96);
-}
-
-.banner p {
-  display: inline-block;
-  margin: 0 14px 0 0;
-  color: var(--white);
-  font-size: 0.95rem;
-}
-
-.banner .cta {
-  padding: 9px 15px;
-  font-size: 0.82rem;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-.hero {
-  position: relative;
-  max-width: none;
-  min-height: 680px;
-  display: grid;
-  place-items: center;
-  padding: 110px 22px 90px;
-  text-align: center;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(6, 26, 54, 0.55), rgba(1, 7, 20, 0.8)),
-    radial-gradient(circle at 50% 10%, rgba(43, 101, 246, 0.30), transparent 35%);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: min(760px, 86vw);
-  height: min(760px, 86vw);
-  border: 1px solid rgba(92, 190, 79, 0.18);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(92, 190, 79, 0.09), transparent 58%);
-  filter: blur(1px);
-  animation: slowPulse 7s ease-in-out infinite;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 180px;
-  background: linear-gradient(to bottom, transparent, var(--bg-deep));
-}
-
-.hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h2 {
-  margin: 0 auto 22px;
-}
-
-.hero p {
-  max-width: 720px;
-  margin: 0 auto 30px;
-  font-size: 1.16rem;
-}
-
-.hero .cta + .cta,
-section .cta + .cta {
-  margin-left: 12px;
-}
-
-@keyframes slowPulse {
-  0%, 100% { transform: scale(0.98); opacity: 0.65; }
-  50% { transform: scale(1.04); opacity: 1; }
-}
-
-/* =========================
-   CTA BUTTONS
-========================= */
-.cta,
-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 13px 22px;
-  min-height: 46px;
-  border: 0;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
-  color: #04101e;
-  font-weight: 800;
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  box-shadow: 0 12px 32px rgba(92, 190, 79, 0.22);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
-}
-
-.cta::after,
-button::after {
-  content: "→";
-  transition: transform 0.22s ease;
-}
-
-.cta:hover,
-button:hover {
-  transform: translateY(-3px) scale(1.035);
-  box-shadow: 0 18px 42px rgba(92, 190, 79, 0.32);
-  filter: brightness(1.04);
-}
-
-.cta:hover::after,
-button:hover::after {
-  transform: translateX(4px);
-}
-
-/* =========================
-   SECTION LAYOUT
-========================= */
-section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 72px 22px;
-}
-
-section > p {
-  max-width: 760px;
-}
-
-section h3::before {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 4px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), var(--blue));
-}
-
-/* =========================
-   CARDS / SERVICE GRID (IMPROVED)
-========================= */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-  margin-top: 32px;
-}
-
-.card {
-  position: relative;
-  padding: 28px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(12, 38, 72, 0.9), rgba(4, 17, 36, 0.9));
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 320px;
-  transition: all 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(92,190,79,0.4);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-
-/* ICON (SVG READY) */
-.icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(92,190,79,0.12);
-  border: 1px solid rgba(92,190,79,0.3);
-  margin-bottom: 14px;
-}
-
-.icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--green);
-}
-
-/* BADGE FIX */
-.badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
-  color: #04101e;
-  padding: 6px 12px;
-  font-size: 11px;
-  border-radius: 999px;
-  font-weight: 700;
-}
-
-.card.popular {
-  border-color: rgba(92,190,79,0.5);
-  transform: translateY(-4px);
-}
-
-/* TEXT SPACING FIX */
-.card h4 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  margin-bottom: 14px;
-}
-
-.card ul {
-  margin: 12px 0;
-  padding-left: 18px;
-}
-
-/* TABLE FIX */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 14px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-th {
-  background: rgba(92,190,79,0.12);
-  font-weight: 600;
-}
-
-tr:hover {
-  background: rgba(255,255,255,0.03);
-}
-
-/* CENTER ALIGNMENT FIX */
-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 70px 20px;
-}
-
-/* Turn regular bullet-list sections into a cleaner consulting-style visual block */ into a cleaner consulting-style visual block */
-section:not(.banner):not(.hero) > ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-  padding: 0;
-  margin-top: 24px;
-  list-style: none;
-}
-
-section:not(.banner):not(.hero) > ul > li {
-  margin: 0;
-  padding: 18px 18px 18px 46px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(9, 28, 55, 0.58);
-  color: var(--muted);
-  transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
-}
-
-section:not(.banner):not(.hero) > ul > li::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 18px;
-  width: 14px;
-  height: 14px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, var(--green), var(--blue));
-  box-shadow: 0 0 18px rgba(92,190,79,0.32);
-}
-
-section:not(.banner):not(.hero) > ul > li:hover {
-  transform: translateY(-4px);
-  border-color: var(--line-green);
-  background: rgba(13, 42, 76, 0.72);
-}
-
-/* =========================
-   FORMS
-========================= */
-form {
-  max-width: 760px;
-  margin-top: 28px;
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: rgba(9, 28, 55, 0.68);
-  box-shadow: var(--shadow);
-}
-
-label {
-  display: inline-block;
-  margin-bottom: 8px;
-  color: var(--text);
-  font-weight: 700;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 14px 15px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(1, 7, 20, 0.76);
-  color: var(--text);
-  font: inherit;
-  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: rgba(92,190,79,0.85);
-  box-shadow: 0 0 0 4px rgba(92,190,79,0.14);
-  background: rgba(1, 7, 20, 0.92);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 170px;
-}
-
-/* =========================
-   SCROLL / MOTION HELPERS
-========================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tilt-glow {
-  transform-style: preserve-3d;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  max-width: none;
-  margin-top: 42px;
-  padding: 38px 22px;
-  text-align: center;
-  border-top: 1px solid var(--line);
-  background: rgba(1, 7, 20, 0.82);
-}
-
-footer p {
-  margin: 0;
-  color: var(--muted-2);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .cards,
-  .service-grid,
-  .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 720px) {
-  header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  nav a {
-    padding-left: 0;
-  }
-
-  .banner p {
-    display: block;
-    margin: 0 0 12px;
-  }
-
-  .hero {
-    min-height: 560px;
-    padding-top: 82px;
-  }
-
-  section {
-    padding: 54px 18px;
-  }
-
-  .cards,
-  .service-grid,
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero .cta + .cta,
-  section .cta + .cta {
-    margin-left: 0;
-    margin-top: 12px;
-  }
-
-  .cta,
-  button {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
-
-/* =========================
-   GLOBAL MOBILE WIDTH / OVERFLOW FIX
-   Prevents horizontal scrolling across all pages
-========================= */
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-img,
-iframe,
-video,
-svg {
-  max-width: 100%;
-}
-
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  header,
-  section,
-  footer,
-  .banner,
-  .hero {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .cards,
-  .service-grid,
-  .card-grid,
-  .who-grid,
-  .benefits-grid,
-  .roadmap {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .card,
-  .service-card,
-  .who-card,
-  .roadmap-step {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    grid-column: 1 / -1 !important;
-  }
-
-  .roadmap-step {
-    grid-row: auto !important;
-  }
-
-  .roadmap-arrow {
-    display: none !important;
-  }
-
-  .cta,
-  button {
-    max-width: 100%;
-  }
-
-  .roadmap-cta {
-    width: fit-content !important;
-    max-width: calc(100vw - 36px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL RESPONSIVE WIDTH LOCK — GLOBAL SITE FIX
-   Keeps every page inside the user's device width.
-========================================================= */
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-body {
-  position: relative;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-img,
-iframe,
-video,
-svg {
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(180deg, var(--bg), var(--bg-deep));
+  color: var(--text);
 }
 
-section,
-header,
-footer,
-.banner,
+/* Prevent ANY overflow sources */
+img, svg, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+
+nav {
+  display: flex;
+  gap: 14px;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+nav a.active {
+  color: var(--text);
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
-  width: 100%;
-  max-width: 100%;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-/* Tables were causing overflow on mobile. This makes them scroll inside their own area instead of stretching the page. */
+.hero p {
+  max-width: 650px;
+  margin: 16px auto;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color: #04101e;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.cta::after {
+  content: " →";
+}
+
+/* =========================
+   BENEFITS GRID
+========================= */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.check-item {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.check-item::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+/* =========================
+   WHO GRID
+========================= */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.who-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--panel);
+  text-align: center;
+}
+
+/* =========================
+   ROADMAP
+========================= */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.roadmap-step {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.roadmap-cta {
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+}
+
+/* =========================
+   TABLE FIX (CRITICAL)
+========================= */
 table {
   width: 100%;
-  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  word-break: break-word;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid var(--line);
+}
+
+/* =========================
+   MOBILE FIX (THIS IS THE REAL FIX)
+========================= */
 @media (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
 
-  body {
-    min-width: 0;
-  }
-
-  header {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
-    overflow-x: hidden;
-  }
-
-  .hero {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .hero h1,
-  .hero h2,
-  h1,
-  h2,
-  h3,
-  p {
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: normal;
-  }
-
-  .hero h2 {
-    font-size: clamp(2.3rem, 12vw, 4rem);
-  }
-
-  .cards,
-  .service-grid,
-  .card-grid,
-  .who-grid,
+  /* Force single column layout everywhere */
   .benefits-grid,
+  .who-grid,
   .roadmap {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    gap: 20px !important;
+    grid-template-columns: 1fr;
   }
 
-  .card,
-  .service-card,
+  /* Ensure cards NEVER overflow */
   .who-card,
   .roadmap-step {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    grid-column: 1 / -1 !important;
-    grid-row: auto !important;
-  }
-
-  .roadmap-arrow {
-    display: none !important;
-  }
-
-  .cta,
-  button {
+    width: 100%;
     max-width: 100%;
-    white-space: normal;
   }
 
-  .roadmap-cta {
-    width: fit-content !important;
-    max-width: calc(100vw - 36px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
+  /* Fix table overflow */
   table {
-    display: block;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+    font-size: 0.8rem;
   }
 
-  th,
-  td {
-    white-space: nowrap;
-  }
-}
-
-
-
-/* =========================================================
-   GLOBAL MOBILE WIDTH FIX — APPLY SITE-WIDE
-   Prevents horizontal overflow on index, services, about, contact
-========================================================= */
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden !important;
-}
-
-img,
-svg,
-iframe,
-video,
-table {
-  max-width: 100%;
-}
-
-@media (max-width: 768px) {
-  header,
-  main,
-  section,
-  footer,
-  .hero,
-  .banner {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+  /* Fix text overflow */
+  h1, h2, h3, p {
+    word-wrap: break-word;
   }
 
-  section {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-  }
-
-  /* Make all card/grid layouts stack cleanly on phones */
-  .cards,
-  .service-grid,
-  .card-grid,
-  .who-grid,
-  .benefits-grid,
-  .roadmap {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    gap: 18px !important;
-  }
-
-  .card,
-  .service-card,
-  .who-card,
-  .roadmap-step {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    grid-column: 1 / -1 !important;
-    grid-row: auto !important;
-  }
-
-  .roadmap-arrow {
-    display: none !important;
-  }
-
-  /* Prevent inline styles from forcing two-column roadmap on mobile */
-  .roadmap-step[style] {
-    grid-column: 1 / -1 !important;
-    grid-row: auto !important;
-  }
-
-  /* Services comparison table should fit inside viewport instead of widening page */
-  table {
-    width: 100% !important;
-    table-layout: fixed !important;
-    font-size: 0.78rem !important;
-  }
-
-  th,
-  td {
-    padding: 10px 6px !important;
-    word-break: break-word !important;
-    white-space: normal !important;
-  }
-
-  /* Keep content from creating sideways scroll */
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  li,
-  a,
-  span {
+  /* Keep CTA clean */
+  .cta {
     max-width: 100%;
-    overflow-wrap: break-word;
-  }
-
-  /* Iframes/forms should never exceed screen width */
-  iframe,
-  form,
-  input,
-  textarea,
-  select {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* Buttons can be full width generally, but special centered CTAs stay natural width */
-  .roadmap-cta {
-    width: fit-content !important;
-    max-width: calc(100vw - 36px) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    text-align: center;
   }
 }
