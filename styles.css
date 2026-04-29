@@ -657,83 +657,46 @@ footer p {
     transition: none !important;
   }
 
-/* ===== UNIVERSAL RESPONSIVE FIX (DO NOT MODIFY ABOVE THIS) ===== */
+/* ===== HARD FIX FOR YOUR ACTUAL ISSUES ===== */
 
-/* 1. Kill horizontal overflow everywhere */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* 2. Ensure all elements respect container width */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* 3. Prevent images, videos, iframes from overflowing */
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 4. Prevent any container from exceeding screen width */
-.container,
-.section,
-div,
-main,
-header,
-footer {
-  max-width: 100%;
-}
-
-/* 5. Fix flex + grid overflow issues */
-[class*="grid"],
-[class*="flex"],
-.row {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* 6. Prevent long text from forcing overflow */
-p, h1, h2, h3, h4, h5, h6, span {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* 7. Make tables mobile-safe (VERY IMPORTANT) */
-table {
-  width: 100%;
-  display: block;
-  overflow-x: auto;
-}
-
-/* 8. Mobile layout enforcement */
 @media (max-width: 768px) {
 
-  /* Force all grid layouts into single column */
-  [class*="grid"] {
-    grid-template-columns: 1fr !important;
+  /* 1. FIX ROADMAP (THIS IS THE BIG ONE) */
+  .roadmap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
   }
 
-  /* Ensure cards and sections don't overflow */
-  .container,
-  .section {
+  .roadmap-step {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Kill inline grid positioning */
+  .roadmap-step[style] {
+    all: unset;
+    display: block;
     width: 100%;
-    max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 20px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+    border: 1px solid rgba(255,255,255,0.08);
   }
 
-  /* Remove any accidental horizontal spacing */
-  body {
-    margin: 0;
-    padding: 0;
+  /* 2. FIX SERVICES TABLE */
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    width: 100% !important;
   }
-}
+
+  /* 3. PREVENT ANY ELEMENT FROM BREAKING WIDTH */
+  * {
+    max-width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
