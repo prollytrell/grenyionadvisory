@@ -657,50 +657,83 @@ footer p {
     transition: none !important;
   }
 
-/* ===== GLOBAL RESPONSIVE FOUNDATION ===== */
+/* ===== UNIVERSAL RESPONSIVE FIX (DO NOT MODIFY ABOVE THIS) ===== */
 
-/* 1. Prevent horizontal overflow everywhere */
+/* 1. Kill horizontal overflow everywhere */
 html, body {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* 2. Make ALL elements respect container width */
+/* 2. Ensure all elements respect container width */
 *,
 *::before,
 *::after {
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
-/* 3. Prevent media from breaking layout */
+/* 3. Prevent images, videos, iframes from overflowing */
 img,
 video,
 iframe {
-  max-width: 100% !important;
-  height: auto !important;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* 4. Force all containers to stay within screen */
+/* 4. Prevent any container from exceeding screen width */
 .container,
 .section,
-div {
-  max-width: 100% !important;
+div,
+main,
+header,
+footer {
+  max-width: 100%;
 }
 
-/* 5. Fix flex/grid overflow issues */
-.row,
-.grid,
+/* 5. Fix flex + grid overflow issues */
 [class*="grid"],
-[class*="flex"] {
-  width: 100% !important;
-  max-width: 100% !important;
+[class*="flex"],
+.row {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* 6. Prevent long text from forcing overflow */
 p, h1, h2, h3, h4, h5, h6, span {
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+/* 7. Make tables mobile-safe (VERY IMPORTANT) */
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* 8. Mobile layout enforcement */
+@media (max-width: 768px) {
+
+  /* Force all grid layouts into single column */
+  [class*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure cards and sections don't overflow */
+  .container,
+  .section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Remove any accidental horizontal spacing */
+  body {
+    margin: 0;
+    padding: 0;
+  }
 }
 }
