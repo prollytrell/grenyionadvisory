@@ -137,6 +137,16 @@ header.scrolled {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
 }
 
+header h1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 nav {
   display: flex;
   align-items: center;
