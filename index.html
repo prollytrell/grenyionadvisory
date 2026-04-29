@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    /* Roadmap grid layout */
     .roadmap {
-      position: relative;
       display: grid;
       grid-template-columns: 1fr 120px 1fr;
       grid-template-rows: auto auto;
       gap: 40px 20px;
-      align-items: center;
+      align-items: start;
       margin: 38px 0 34px;
     }
 
@@ -34,10 +34,6 @@
       box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
     }
 
-    .lower-step {
-      margin-top: 28px;
-    }
-
     .step-number {
       position: absolute;
       top: 18px;
@@ -49,9 +45,6 @@
     }
 
     .step-icon {
-      margin: 0 auto 12px;
-      width: 56px;
-      height: 56px;
       width: 48px;
       height: 48px;
       display: flex;
@@ -72,167 +65,65 @@
       stroke-linejoin: round;
     }
 
-    .roadmap-step h4 {
-      margin-bottom: 10px;
-    }
+    .roadmap-step h4 { margin-bottom: 10px; }
+    .roadmap-step p  { margin-bottom: 0; }
 
-    .roadmap-step p {
-      margin-bottom: 0;
-    }
-
-    
-    .roadmap-arrow svg {
-      width: 100%;
-      max-width: 130px;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      filter: drop-shadow(0 0 8px rgba(92, 190, 79, 0.25));
-    }
-
-    
-    
-    
     .roadmap-cta {
       display: block;
       width: fit-content;
       margin: 40px auto 0;
+    }
+
+    /* Who grid & benefits grid */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .who-card {
+      padding: 24px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+      border: 1px solid rgba(255,255,255,0.08);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 180px;
     }
 
-    @media (max-width: 850px) {
-      .roadmap {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .roadmap-arrow {
-        display: none;
-      }
-
-      .lower-step {
-        margin-top: 0;
-      }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
-  .who-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
 
-.who-card {
-  padding: 24px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
-  border: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
+    .check-item {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  min-height: 180px;
-}
+    .check-item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-left: 2px solid #5cbe4f;
+      border-bottom: 2px solid #5cbe4f;
+      transform: rotate(-45deg);
+    }
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.check-item {
-  position: relative;
-  padding-left: 28px;
-  margin-bottom: 12px;
-}
-
-.check-item:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 16px;
-  height: 16px;
-  border-left: 2px solid #5cbe4f;
-  border-bottom: 2px solid #5cbe4f;
-  transform: rotate(-45deg);
-}
-
-@media (max-width: 900px) {
-  .who-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-  /* Fix mobile horizontal overflow */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-img, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* SPECIFIC FIX: roadmap grid causing overflow */
-@media (max-width: 768px) {
-  .roadmap {
-    display: grid;
-    grid-template-columns: 1fr; /* force single column */
-    gap: 16px;
-    width: 100%;
-  }
-
-  .roadmap-card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .roadmap-arrow {
-    display: none;
-  }
-
-  /* ensure parent containers don’t squeeze layout */
-  .container, .section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-
-  .roadmap-arrow {
-    display: none; /* remove arrows on mobile */
-  }
-
-  .container, .section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-
-  * {
-    box-sizing: border-box;
-  }
-
-  img, iframe {
-    max-width: 100%;
-    height: auto;
-  }
-
-</style>
+    @media (max-width: 900px) {
+      .who-grid      { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
@@ -399,7 +290,6 @@ img, iframe {
     <p>Leave with practical improvements, policy direction, and a clear path toward stronger security governance.</p>
   </div>
 </div>
-</br>
   <a class="cta roadmap-cta" href="#form">Get Your Free Security Review</a>
 </section>
 
@@ -426,5 +316,6 @@ img, iframe {
   <p>© 2026 Grenyion Advisory</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
