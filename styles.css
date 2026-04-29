@@ -656,4 +656,51 @@ footer p {
     scroll-behavior: auto !important;
     transition: none !important;
   }
+
+/* ===== GLOBAL RESPONSIVE FOUNDATION ===== */
+
+/* 1. Prevent horizontal overflow everywhere */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. Make ALL elements respect container width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+/* 3. Prevent media from breaking layout */
+img,
+video,
+iframe {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* 4. Force all containers to stay within screen */
+.container,
+.section,
+div {
+  max-width: 100% !important;
+}
+
+/* 5. Fix flex/grid overflow issues */
+.row,
+.grid,
+[class*="grid"],
+[class*="flex"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 6. Prevent long text from forcing overflow */
+p, h1, h2, h3, h4, h5, h6, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 }
