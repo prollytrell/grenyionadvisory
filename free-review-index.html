@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grenyion Advisory - Free Security Review</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .roadmap {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 120px 1fr;
+      grid-template-rows: auto auto;
+      gap: 40px 20px;
+      align-items: center;
+      margin: 38px 0 34px;
+    }
+
+    .roadmap-step {
+      position: relative;
+      min-height: 235px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .roadmap-step:hover {
+      transform: translateY(-6px);
+      border-color: rgba(92, 190, 79, 0.45);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .lower-step {
+      margin-top: 28px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(245, 248, 252, 0.55);
+    }
+
+    .step-icon {
+      margin: 0 auto 12px;
+      width: 56px;
+      height: 56px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background: rgba(92, 190, 79, 0.12);
+      border: 1px solid rgba(92, 190, 79, 0.32);
+      color: #5cbe4f;
+    }
+
+    .step-icon svg {
+      width: 23px;
+      height: 23px;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .roadmap-step h4 {
+      margin-bottom: 10px;
+    }
+
+    .roadmap-step p {
+      margin-bottom: 0;
+    }
+
+    
+    .roadmap-arrow svg {
+      width: 100%;
+      max-width: 130px;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 8px rgba(92, 190, 79, 0.25));
+    }
+
+    
+    
+    
+    .roadmap-cta {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .roadmap {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .roadmap-arrow {
+        display: none;
+      }
+
+      .lower-step {
+        margin-top: 0;
+      }
+    }
+  .who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.who-card {
+  padding: 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(12, 38, 72, 0.92), rgba(4, 17, 36, 0.92));
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 180px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.check-item {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+}
+
+.check-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-left: 2px solid #5cbe4f;
+  border-bottom: 2px solid #5cbe4f;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .who-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  /* Fix mobile horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* SPECIFIC FIX: roadmap grid causing overflow */
+@media (max-width: 768px) {
+  .roadmap {
+    display: grid;
+    grid-template-columns: 1fr; /* force single column */
+    gap: 16px;
+    width: 100%;
+  }
+
+  .roadmap-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .roadmap-arrow {
+    display: none;
+  }
+
+  /* ensure parent containers don’t squeeze layout */
+  .container, .section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+  .roadmap-arrow {
+    display: none; /* remove arrows on mobile */
+  }
+
+  .container, .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  .hero::before {
+  display: none !important;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">
+    <a href="/home">
+      <img src="logo.png" alt="Grenyion Advisory Logo">
+    <span>Grenyion Advisory</span>
+    </a>
+  </h1>
+
+  <nav>
+    <a href="/home" class="active">Home</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Free Security & AI Risk Review</h2>
+  <p>No technical expertise required.</p>
+
+  <a class="cta" href="#form">Get Your Free Security Review</a>
+
+  <p style="max-width:700px; margin-top:20px;">
+    Identify your top security risks, understand how AI impacts your organization, and get simple, actionable steps to improve—all without complexity.
+  </p>
+</section>
+
+<!-- WHAT YOU GET -->
+<section>
+  <h3>What You Get</h3>
+
+  <div class="benefits-grid">
+
+    <div>
+      <p class="check-item">Identification of your top 3–5 security risks</p>
+      <p class="check-item">Clear explanation of each risk in plain language</p>
+      <p class="check-item">Prioritized recommendations</p>
+      <p class="check-item">AI usage risk review (Claude, ChatGPT, Copilot, etc.)</p>
+    </div>
+
+    <div>
+      <p class="check-item">Guidance on safe AI usage</p>
+      <p class="check-item">Policy starter pack (Password, AUP, IR, Data Protection, AI Use)</p>
+      <p class="check-item">Optional walkthrough call</p>
+      <p class="check-item"><strong>Discounted rates on follow-up services (limited-time after your review)</strong></p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHO IT'S FOR -->
+<section>
+  <h3>Who This Is For</h3>
+
+  <div class="who-grid">
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c2-4 14-4 16 0"/>
+        </svg>
+      </div>
+      <p>Nonprofits handling donor or community data</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 12h18"/>
+          <path d="M12 3v18"/>
+        </svg>
+      </div>
+      <p>Startups moving fast without dedicated security</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6z"/>
+        </svg>
+      </div>
+      <p>Organizations using AI tools without clear guidelines</p>
+    </div>
+
+    <div class="who-card">
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        </svg>
+      </div>
+      <p>Teams looking for clarity without technical overwhelm</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section>
+  <h3>What to Expect</h3>
+
+  <div class="roadmap">
+
+  <!-- 1 -->
+  <div class="roadmap-step">
+    <span class="step-number">01</span>
+    <div class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M9 11l3 3L22 4"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    </div>
+    <h4>Questionnaire</h4>
+    <p>Answer a short intake form about your organization, tools, security basics, and AI usage.</p>
+  </div>
+
+  <!-- arrow 1 -->
+  
+
+  <!-- 2 -->
+  <div class="roadmap-step">
+    <span class="step-number">02</span>
+    <div class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6z"/>
+        <path d="M9 12l2 2 4-5"/>
+      </svg>
+    </div>
+    <h4>Review</h4>
+    <p>Receive a structured Security & AI Risk Review with your top risks and prioritized recommendations.</p>
+  </div>
+
+  <!-- arrow 2 (down) -->
+  
+
+  <!-- 3 -->
+  <div class="roadmap-step lower-step">
+    <span class="step-number">03</span>
+    <div class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        <path d="M8 9h8"/>
+        <path d="M8 13h5"/>
+      </svg>
+    </div>
+    <h4>Optional Consult</h4>
+    <p>Jump on a walkthrough call to refine findings, clarify priorities, and discuss your next move.</p>
+  </div>
+
+  <!-- arrow 3 -->
+  
+
+  <!-- 4 -->
+  <div class="roadmap-step lower-step">
+    <span class="step-number">04</span>
+    <div class="step-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 17l6-6 4 4 8-8"/>
+        <path d="M14 7h7v7"/>
+        <path d="M5 21h14"/>
+      </svg>
+    </div>
+    <h4>Next Steps</h4>
+    <p>Leave with practical improvements, policy direction, and a clear path toward stronger security governance.</p>
+  </div>
+</div>
+</br>
+  <a class="cta roadmap-cta" href="#form">Get Your Free Security Review</a>
+</section>
+
+<!-- FORM -->
+<section id="form">
+  <h3>Start Your Free Security Review</h3>
+
+  <iframe data-tally-src="https://tally.so/embed/GxoOPj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1258" frameborder="0" marginheight="0" marginwidth="0" title="Free Security & AI Risk Review"></iframe>
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+      "undefined"!=typeof Tally
+        ? Tally.loadEmbeds()
+        : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc});
+    };
+    if("undefined"!=typeof Tally) v();
+    else if(d.querySelector('script[src="'+w+'"]')==null){
+      var s=d.createElement("script");
+      s.src=w; s.onload=v; s.onerror=v; d.body.appendChild(s);
+    }
+  </script>
+</section>
+
+<footer>
+  <p>© 2026 Grenyion Advisory</p>
+</footer>
+
+</body>
+</html>
