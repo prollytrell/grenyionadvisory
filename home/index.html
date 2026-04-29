@@ -76,6 +76,44 @@
 
   <a class="cta" href="/">Get Your Free Security Review</a>
 </section>
+    <script>
+  // Check if URL contains submitted=true
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("submitted") === "true") {
+
+    // Create popup
+    const popup = document.createElement("div");
+    popup.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #0b2748;
+        color: #f5f8fc;
+        padding: 16px 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 9999;
+        max-width: 300px;
+        font-size: 14px;
+      ">
+        ✅ Thank you for your submission!<br>
+        We’ll review your request shortly.
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    // Remove popup after 4 seconds
+    setTimeout(() => {
+      popup.remove();
+    }, 4000);
+
+    // Clean the URL (removes ?submitted=true)
+    window.history.replaceState({}, document.title, "/home/");
+  }
+</script>
 
 <footer>
   <p>© 2026 Grenyion Advisory</p>
