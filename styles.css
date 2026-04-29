@@ -651,7 +651,6 @@ footer p {
   }
 }
 
-
 /* =========================
    GLOBAL MOBILE WIDTH / OVERFLOW FIX
    Prevents horizontal scrolling across all pages
@@ -731,3 +730,150 @@ svg {
     margin-right: auto !important;
   }
 }
+
+
+/* =========================================================
+   FINAL RESPONSIVE WIDTH LOCK — GLOBAL SITE FIX
+   Keeps every page inside the user's device width.
+========================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+iframe,
+video,
+svg {
+  max-width: 100%;
+}
+
+section,
+header,
+footer,
+.banner,
+.hero {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Tables were causing overflow on mobile. This makes them scroll inside their own area instead of stretching the page. */
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  section {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero h1,
+  .hero h2,
+  h1,
+  h2,
+  h3,
+  p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .hero h2 {
+    font-size: clamp(2.3rem, 12vw, 4rem);
+  }
+
+  .cards,
+  .service-grid,
+  .card-grid,
+  .who-grid,
+  .benefits-grid,
+  .roadmap {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 20px !important;
+  }
+
+  .card,
+  .service-card,
+  .who-card,
+  .roadmap-step {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+
+  .roadmap-arrow {
+    display: none !important;
+  }
+
+  .cta,
+  button {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .roadmap-cta {
+    width: fit-content !important;
+    max-width: calc(100vw - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  table {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+
