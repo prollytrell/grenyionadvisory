@@ -96,6 +96,8 @@
         align-items: center;
         justify-content: center;
         z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       `;
 
       // Create modal
@@ -113,6 +115,9 @@
         position: relative;
         font-size: 15px;
         line-height: 1.6;
+        transform: scale(0.95);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
       `;
 
       modal.innerHTML = `
@@ -137,8 +142,21 @@
       overlay.appendChild(modal);
       document.body.appendChild(overlay);
 
+      // Trigger fade-in
+      requestAnimationFrame(() => {
+        overlay.style.opacity = "1";
+        modal.style.opacity = "1";
+        modal.style.transform = "scale(1)";
+      });
+
       function closeModal() {
-        overlay.remove();
+        overlay.style.opacity = "0";
+        modal.style.opacity = "0";
+        modal.style.transform = "scale(0.95)";
+
+        setTimeout(() => {
+          overlay.remove();
+        }, 300);
       }
 
       document.getElementById("closePopup").onclick = closeModal;
@@ -146,9 +164,9 @@
       // Auto close after 7 seconds
       setTimeout(closeModal, 7000);
 
-    }, 1500); // 1.5 second delay
+    }, 1500);
 
-    // Clean URL immediately so it doesn’t re-trigger
+    // Clean URL so it doesn’t re-trigger
     window.history.replaceState({}, document.title, "/home/");
   }
 </script>
