@@ -648,6 +648,25 @@ footer p {
   button {
     width: 100%;
   }
+
+  /* Roadmap: force all steps into single column, reset any row/col positioning */
+  .roadmap {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .roadmap-step,
+  .roadmap-step.lower-step {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    margin-top: 0 !important;
+  }
+
+  /* Table: reduce padding so cells fit better on small screens */
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -655,30 +674,5 @@ footer p {
     animation: none !important;
     scroll-behavior: auto !important;
     transition: none !important;
-  }
-
-/* Table scroll container */
-.table-scroll {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch;
-  display: block !important;
-  border-radius: 12px;
-  }
-
-/* Force only the table to be wider than mobile */
-.table-scroll table {
-  width: max-content !important;
-  min-width: 650px !important;
-  max-width: none !important;
-  table-layout: auto !important;
-  }
-
-/* Prevent the table cells from wrapping weirdly */
-.table-scroll th,
-.table-scroll td {
-  white-space: nowrap !important;
   }
 }
