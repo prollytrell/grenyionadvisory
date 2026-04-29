@@ -514,6 +514,16 @@ section:not(.banner):not(.hero) > ul > li:hover {
 }
 
 /* =========================
+   ROADMAP STEP PLACEMENT (desktop)
+========================= */
+@media (min-width: 721px) {
+  .roadmap-step:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .roadmap-step:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .roadmap-step:nth-child(3) { grid-column: 1; grid-row: 2; }
+  .roadmap-step:nth-child(4) { grid-column: 3; grid-row: 2; }
+}
+
+/* =========================
    FORMS
 ========================= */
 form {
@@ -661,6 +671,7 @@ footer p {
     grid-row: auto !important;
     margin-top: 0 !important;
   }
+}
 
   /* Table: reduce padding so cells fit better on small screens */
   th, td {
