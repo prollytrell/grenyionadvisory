@@ -150,6 +150,18 @@ header h1 {
   text-transform: uppercase;
 }
 
+header h1::before {
+  content: "G";
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, rgba(43, 101, 246, 0.32), rgba(92, 190, 79, 0.26));
+  border: 1px solid var(--line-green);
+  color: var(--white);
+  font-weight: 800;
+}
 
 nav {
   display: flex;
@@ -191,25 +203,6 @@ nav a.active {
 nav a:hover::after,
 nav a.active::after {
   transform: scaleX(1);
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.logo span {
-  font-weight: 600;
-}
-
-/* LOGO SIZE (match old G: 36px) */
-.logo img {
-  height: 36px;
-  width: auto;
-  display: block;
 }
 
 /* =========================
@@ -655,5 +648,86 @@ footer p {
     animation: none !important;
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+
+
+/* =========================
+   GLOBAL MOBILE WIDTH / OVERFLOW FIX
+   Prevents horizontal scrolling across all pages
+========================= */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+iframe,
+video,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header,
+  section,
+  footer,
+  .banner,
+  .hero {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .cards,
+  .service-grid,
+  .card-grid,
+  .who-grid,
+  .benefits-grid,
+  .roadmap {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .card,
+  .service-card,
+  .who-card,
+  .roadmap-step {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    grid-column: 1 / -1 !important;
+  }
+
+  .roadmap-step {
+    grid-row: auto !important;
+  }
+
+  .roadmap-arrow {
+    display: none !important;
+  }
+
+  .cta,
+  button {
+    max-width: 100%;
+  }
+
+  .roadmap-cta {
+    width: fit-content !important;
+    max-width: calc(100vw - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
