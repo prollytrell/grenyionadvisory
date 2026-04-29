@@ -1,274 +1,210 @@
 /* =========================
-   GRENYION ADVISORY — CLEAN FIXED STYLES
+   GRENYION ADVISORY — MODERN CYBER CONSULTING THEME
 ========================= */
 
 :root {
   --bg: #020b1f;
   --bg-deep: #010714;
   --navy: #061a36;
-  --panel: rgba(9, 28, 55, 0.75);
-  --line: rgba(255,255,255,0.08);
+  --navy-soft: #0b2748;
+  --panel: rgba(9, 28, 55, 0.72);
+  --panel-light: rgba(13, 42, 76, 0.9);
+  --line: rgba(255, 255, 255, 0.10);
+  --line-green: rgba(92, 190, 79, 0.42);
   --text: #f5f8fc;
   --muted: #b8c7d9;
+  --muted-2: #8193aa;
   --green: #5cbe4f;
   --green-dark: #2f8c3f;
   --blue: #2b65f6;
-  --max: 1100px;
+  --white: #ffffff;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+  --max: 1160px;
 }
 
 /* =========================
    GLOBAL RESET
 ========================= */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+html {
+  scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  font-family: Inter, sans-serif;
-  background: linear-gradient(180deg, var(--bg), var(--bg-deep));
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(43, 101, 246, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(92, 190, 79, 0.13), transparent 26%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
   color: var(--text);
 }
 
-/* Prevent ANY overflow sources */
-img, svg, video, iframe {
+/* =========================
+   MEDIA SAFETY
+========================= */
+
+img,
+svg,
+video,
+iframe {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 /* =========================
-   TYPOGRAPHY
+   TYPOGRAPHY (UNCHANGED)
 ========================= */
+
 h1, h2, h3, h4 {
   margin: 0;
+  color: var(--text);
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: clamp(2.4rem, 6vw, 5.8rem);
+  max-width: 980px;
 }
 
 p {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.72;
 }
 
 /* =========================
-   HEADER
+   SECTION WIDTH CONTROL
 ========================= */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--line);
-}
 
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.logo img {
-  width: 32px;
-  height: 32px;
-}
-
-nav {
-  display: flex;
-  gap: 14px;
-}
-
-nav a {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-nav a.active {
-  color: var(--text);
+section,
+header,
+footer,
+.hero,
+.banner {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* =========================
-   HERO
+   GRID + CARDS (SAFE)
 ========================= */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
 
-.hero p {
-  max-width: 650px;
-  margin: 16px auto;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-section {
-  max-width: var(--max);
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* =========================
-   CTA BUTTON
-========================= */
-.cta {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
-  color: #04101e;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-.cta::after {
-  content: " →";
-}
-
-/* =========================
-   BENEFITS GRID
-========================= */
-.benefits-grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
 }
 
-.check-item {
-  margin-bottom: 12px;
-  position: relative;
-  padding-left: 22px;
-}
-
-.check-item::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--green);
+.card {
+  min-width: 0;
 }
 
 /* =========================
-   WHO GRID
+   TABLE FIX (SHRINK — NOT SCROLL)
 ========================= */
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
 
-.who-card {
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--panel);
-  text-align: center;
-}
-
-/* =========================
-   ROADMAP
-========================= */
-.roadmap {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.roadmap-step {
-  background: var(--panel);
-  padding: 20px;
-  border-radius: 12px;
-  position: relative;
-}
-
-.step-number {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.roadmap-cta {
-  display: block;
-  width: fit-content;
-  margin: 40px auto 0;
-}
-
-/* =========================
-   TABLE FIX (CRITICAL)
-========================= */
 table {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 100%;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 th, td {
   padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
   word-break: break-word;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
+  white-space: normal;
   text-align: center;
-  padding: 30px;
-  border-top: 1px solid var(--line);
 }
 
 /* =========================
-   MOBILE FIX (THIS IS THE REAL FIX)
+   MOBILE FIX (SINGLE CLEAN VERSION)
 ========================= */
+
 @media (max-width: 768px) {
 
-  /* Force single column layout everywhere */
-  .benefits-grid,
-  .who-grid,
-  .roadmap {
-    grid-template-columns: 1fr;
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  /* Ensure cards NEVER overflow */
+  section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* FORCE STACKED LAYOUTS */
+  .cards,
+  .service-grid,
+  .card-grid,
+  .who-grid,
+  .benefits-grid,
+  .roadmap {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 18px;
+  }
+
+  .card,
+  .service-card,
   .who-card,
   .roadmap-step {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
   }
 
-  /* Fix table overflow */
-  table {
-    font-size: 0.8rem;
+  /* REMOVE FORCED INLINE GRID POSITIONS */
+  .roadmap-step[style] {
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 
-  /* Fix text overflow */
-  h1, h2, h3, p {
-    word-wrap: break-word;
+  .roadmap-arrow {
+    display: none;
   }
 
-  /* Keep CTA clean */
-  .cta {
+  /* TEXT WRAP FIX */
+  h1, h2, h3, h4, p, li {
     max-width: 100%;
-    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  /* BUTTON CONTROL */
+  .cta,
+  button {
+    max-width: 100%;
+  }
+
+  /* FORM + IFRAME SAFETY */
+  iframe,
+  form,
+  input,
+  textarea,
+  select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* HERO TEXT SCALING */
+  .hero h2 {
+    font-size: clamp(2.3rem, 10vw, 3.6rem);
   }
 }
